@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.custom-radio {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-radio > div {
+  box-shadow: 0 0 0 5px white;
+}
+
+.custom-radio input:checked + div {
+  background-color: red;
+  @apply bg-blue-500;
+  box-shadow: 0 0 0 2.5px white,
+    0 0 0 5px rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.custom-checkbox-square {
+  width: 20px;
+  height: 20px;
+}
+
+.custom-checkbox input:checked + div .custom-checkbox-square {
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.register::before {
+  content: '';
+  display: block;
+  width: 700px;
+  height: 100%;
+  background: url('/src/assets/images/welcome.svg') center no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -680px;
+  bottom: -25px;
+}
+
+.login::before {
+  content: '';
+  display: block;
+  width: 140px;
+  height: 100%;
+  background: url('/src/assets/images/login-bg-left.png') center no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -100px;
+  bottom: 0;
+  pointer-events: none;
+}
+.login::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 100%;
+  background: url('/src/assets/images/login-bg-right.png') center no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -140px;
+  top: 0;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+  background: gray;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #888;
+  border-radius: 10px;
+}
+
+.two-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
